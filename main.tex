@@ -33,9 +33,51 @@
 Let $\R^n$ be any Euclidian Space, and let $\vec v_1, \vec v_2, \vec v_3 \in \R^n$ be vectors such that the set
 of vectors $\set{\vec v_1, \vec v_2, \vec v_3}$ is linearly independent.
 
-Prove that the set of vectors $\set{\vec v_1, \vec v_2, \vec v_1 + \vec v_3}$ is linearly independent.
+\begin{lemma}
+	$\forall S,b \ba{ S \in L_I \wedge b \subset S  \implies b \in L_I} $, where $S$ and $B$ are ordered sets of vectors, and $L_I$ is the set of all linearly independent sets.
+
+	\label{subset}
+\end{lemma}
+
+Prove that the set of vectors $\set{\vec v_1, \vec v_2, \vec v_1 + \vec v_3}$ is linearly independent (Proposition $P$).
+
+\renewcommand\qedsymbol{QED}
 
 \begin{proof}
+
+	Let $\mathcal F$ be the set of all ordered sets that have any number of elements $\in \R$, but not any ordered set with all 0 values.
+
+	Let $Q$ be the proposition that $\set{\vec v_1, \vec v_2, \vec v_3}$ is linearly independent.
+
+	Assuming $Q \wedge \neg P \rightarrow \set{\vec v_1, \vec v_2, \vec v_1 + \vec v_3}$ is linearly dependent.
+
+	$$
+		\neg P \rightarrow \exists \set{x_1,x_2,x_3} \in \mathcal F : x_1 \vec v_1 + x_2 \vec v_2 + x_3 \pa{\vec v_1 + \vec v_3} = \vec 0
+	$$
+	\begin{align*}
+		\sim
+		\pa{x_1 + x_3} {\vec v_1} + x_2 \vec v_2 + x_3 \vec v_3    & = \vec 0         \\
+		\pa{x_1+x_3}\vec v_1 + x_2\vec v_2                         & = - x_3 \vec v_3 \\
+		-\pa{\frac{x_1}{x_3} + 1}\vec v_1 -\frac{x_2}{x_3}\vec v_2 & = \vec v_3
+	\end{align*}
+
+	$$
+		\llet t = -\frac{x_1}{x_3}, s=-\frac{x_2}{x_3}
+	$$
+
+	\begin{align*}
+		\neg P \implies \exists t,v : t\vec v_1 + s \vec v_2 & = \vec v_3
+	\end{align*}
+
+	This brings a contradiction: assuming $\neg P$ implies that there exists two real numbers $t, v$ (who are not both $0$) that can be into a linear combination with $\set{\vec v_1, \vec v_2}$ to equal $\vec v_3$, therefore $\neg P \implies \set{\vec v_1, \vec v_2, \vec v_3}$ is linearly dependent.
+
+	As shown by Lemma \ref{subset}, $\set{\vec v_1, \vec v_2}$ is linearly independent as it is a subset of the linearly independent set~$\set{\vec v_1, \vec v_2, \vec v_3}$.
+
+	This shows that $Q\wedge \neg P \implies \neg Q$, which is a contradiction which must mean that $P$ must be true, and the set $\set{\vec v_1,\vec v_2, \vec v_1+\vec v_3}$ is linearly independent.
+
+	% Let $\set{x_1,x_2,x_3} \in \mathcal F$ such that
+	% $x_1\vec v_1 + x_2 \vec v_2 + x_3\pa{\vec v_1+\vec v_3} =\vec 0.$
+
 
 \end{proof}
 
