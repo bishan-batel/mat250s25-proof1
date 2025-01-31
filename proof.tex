@@ -1,10 +1,10 @@
 \begin{proof}
 
-	Let $\mathcal F$ be the set of all ordered sets that have elements $\in \R$, but not any ordered set with all 0 values.
-
 	Let $Q$ be the proposition that $\set{\vec v_1, \vec v_2, \vec v_3}$ is linearly independent.
 
-	Assuming $Q \wedge \neg P \rightarrow \set{\vec v_1, \vec v_2, \vec v_1 + \vec v_3}$ is linearly dependent.
+	Assume that $Q \wedge \neg P \rightarrow \set{\vec v_1, \vec v_2, \vec v_1 + \vec v_3}$ is linearly dependent.
+
+	Let $\mathcal F$ be the set of all sets that have elements $\in \R$, but not any set with all 0 values.
 
 	$$
 		\neg P \rightarrow \exists \set{x_1,x_2,x_3} \in \mathcal F : x_1 \vec v_1 + x_2 \vec v_2 + x_3 \pa{\vec v_1 + \vec v_3} = \vec 0
@@ -24,11 +24,12 @@
 		\neg P \implies \exists t,v : t\vec v_1 + s \vec v_2 & = \vec v_3
 	\end{align*}
 
-	This brings a contradiction: assuming $\neg P$ implies that there exists two real numbers $t, v$ (who are not both $0$) that can be made into a linear combination with $\set{\vec v_1, \vec v_2}$ to equal $\vec v_3$, therefore $\neg P \implies \set{\vec v_1, \vec v_2, \vec v_3}$ is linearly dependent.
+	Assuming $\neg P$ implies that there exists two real numbers $\set{t, v}\in \mathcal{F}$  that can be made into a linear combination with $\set{\vec v_1, \vec v_2}$ to construct $\vec v_3$.
+	Therefore the set $\set{\vec v_1, \vec v_2, \vec v_3}$ is linearly dependent.
 
-	As shown by Lemma \ref{subset}, $\set{\vec v_1, \vec v_2}$ is linearly independent as it is a subset of the linearly independent set~$\set{\vec v_1, \vec v_2, \vec v_3}$.
+	As shown by thereom \ref{subset}, $\set{\vec v_1, \vec v_2}$ must be linearly independent as it is a subset of the defined linearly independent set $\set{\vec v_1, \vec v_2, \vec v_3}$.
 
-	This shows that $Q\wedge \neg P \implies \neg Q$, which is a contradiction which must mean that $P$ must be true, and the set $\set{\vec v_1,\vec v_2, \vec v_1+\vec v_3}$ is linearly independent.
+	This shows that $Q\wedge \neg P \implies \neg Q$, which is a contradiction, meaning that $P$ must be true ($\set{\vec v_1,\vec v_2, \vec v_1+\vec v_3}$ is linearly independent).
 
 	% Let $\set{x_1,x_2,x_3} \in \mathcal F$ such that
 	% $x_1\vec v_1 + x_2 \vec v_2 + x_3\pa{\vec v_1+\vec v_3} =\vec 0.$
